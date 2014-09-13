@@ -3,10 +3,11 @@
 # @github https://github.com/CustomCraftDev/tpjail
 
 debug: false
-location:
+nopermission-msg: 'You shall not pass'
+jail-location:
   worldname: world
-  x: 0
-  y: 0
-  z: 0
-  pitch: 0
-  yaw: 0
+  x: 0.0
+  y: 100.0
+  z: 0.0
+  pitch: 0.0
+  yaw: 0.0
