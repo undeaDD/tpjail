@@ -3,8 +3,8 @@ package tpjail;
 import java.io.File;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.ChatColor;
@@ -165,10 +165,14 @@ public class TpJail extends JavaPlugin implements Listener{
 		return false;
 	}
 	
+    
+	/**
+     *  saving new location
+     */
 	public void save(){
 		config.set("jail-location.worldname",jail.getWorld().getName());
 		config.set("jail-location.x",jail.getX());
-		config.set("jail-location.Y",jail.getY());
+		config.set("jail-location.y",jail.getY());
 		config.set("jail-location.z",jail.getZ());
 		config.set("jail-location.pitch",jail.getPitch());
 		config.set("jail-location.yaw",jail.getYaw());
@@ -176,8 +180,12 @@ public class TpJail extends JavaPlugin implements Listener{
 			reloadConfig();
 	}
 	
-    @EventHandler
-    public void onPreprocess(PlayerJoinEvent e) {
+    
+	/**
+     *  join event
+     */
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onAction(PlayerJoinEvent e) {
     	Player p = e.getPlayer();
     	if(p.hasPermission("tpjail.active")){
     		p.teleport(jail);
@@ -185,12 +193,15 @@ public class TpJail extends JavaPlugin implements Listener{
     }
 	
     
-    @EventHandler
-    public void onPreprocess(PlayerRespawnEvent e) {
+	/**
+     *  respawn event
+     */
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onAction(PlayerRespawnEvent e) {
     	Player p = e.getPlayer();
-    	if(p.hasPermission("tpjail.active")){
-    		p.teleport(jail);
-    	}
+		   if(p.hasPermission("tpjail.active")){
+			   e.setRespawnLocation(jail);
+		   }
     }
 	
 	
