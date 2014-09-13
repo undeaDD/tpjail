@@ -1,0 +1,12 @@
+# @author DieFriiks / CustomCraftDev / undeaD_D
+# @link www.custom-craft.de
+# @github https://github.com/CustomCraftDev/tpjail
+
+debug: false
+location:
+  worldname: world
+  x: 0
+  y: 0
+  z: 0
+  pitch: 0
+  yaw: 0
