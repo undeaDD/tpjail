@@ -1,5 +1,6 @@
 name: TpJail
 main: tpjail.TpJail
+version: 1.0
 authors: [DieFriiks, CustomCraftDev, undeaD_D]
 databse: false
 commands:
