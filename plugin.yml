@@ -1,0 +1,23 @@
+name: TpJail
+main: tpjail.TpJail
+authors: [DieFriiks, CustomCraftDev, undeaD_D]
+databse: false
+commands:
+  tpjail:
+    usage: /<command> <reload/disable/reset>
+    description: reload/reset/disable tpjail plugin
+permissions:
+  tpjail.active:
+    description: teleports you to jail on login/death
+  tpjail.*:
+    description: grants every permission from tpjail
+    children:
+      tpjail.reload: true
+      tpjail.reset: true
+      tpjail.disable: true
+  tpjail.reload:
+    description: reload tpjail at runtime
+  tpjail.reset:
+    description: reset tpjail config at runtime and reload after
+  tpjail.disable:
+    description: disables tpjail at runtime
