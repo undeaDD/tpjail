@@ -11,7 +11,7 @@ DONE ...
 you will find informations in plugin.yml and config.yml ...
 
 just remember to give the jail group the permission:
-  - tpjail.active                                                                                 
+tpjail.active                                                                                     
 and take it away from admin/owner groups with .*                                                                    
 or else they will get teleportet too :D
 
